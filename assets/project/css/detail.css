@@ -1,0 +1,44 @@
+main {
+  width: 1250px;
+  margin: 20px auto;
+}
+main top {
+  display: block;
+  font-size: 12px;
+  line-height: 40px;
+  width: inherit;
+  height: 40px;
+  background-color: #E1E5E6;
+  text-align: center;
+}
+main top a,
+main top a:visited {
+  color: black;
+  text-decoration: none;
+}
+main title {
+  display: block;
+  width: inherit;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid black;
+}
+main content {
+  margin-top: 10px;
+  display: block;
+  font-size: 17px;
+  font-family: SimSun;
+  Text-indent: 2em;
+}
+main content img {
+  width: 840px;
+  height: 400px;
+  margin-top: 5px;
+  margin-left: 20%;
+  margin: auto;
+  display: block;
+  margin-bottom: 10px;
+}

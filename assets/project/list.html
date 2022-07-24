@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>list</title>
+    <link rel="stylesheet" href="css/bootstrap2.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery-2.1.3.js"></script>
+    <script src="js/bootstrap2.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="css/list.css">
+    <style>
+        .pagination>.active>a {
+            background-color: #cfd1d2;
+            border-color: #E1E5E6;
+        }
+        
+        .pagination>.active>a,
+        .pagination>.active>span,
+        .pagination>.active>a:hover,
+        .pagination>.active>span:hover,
+        .pagination>.active>a:focus,
+        .pagination>.active>span:focus {
+            z-index: 2;
+            color: #fff;
+            cursor: default;
+            background-color: #bdbebf;
+            border-color: #E1E5E6;
+        }
+        
+        .pagination>li>a,
+        .pagination>li>span {
+            position: relative;
+            float: left;
+            padding: 6px 12px;
+            margin-left: -1px;
+            line-height: 1.42857143;
+            color: #888989;
+            text-decoration: none;
+            background-color: #fff;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-top">
+            <div class="header-top-right">
+                <p style="font-size:24px;margin-top:-4px">中国民办大学第一</p>
+                <p style="margin-top:-12px">一所注重学科交叉融合的应用型大学</p>
+                <p style="margin-top:-15px">一所信息产业商学院 一所最受尊崇的大学</p>
+                <div class="xq">綦江校区</div>
+            </div>
+        </div>
+        <div class="header-main">
+            <ul class="header-main-uone">
+                <li class="header-main-lone">
+                    <span>首页</span>
+                </li>
+                <li class="header-main-lone">
+                    <span>移通概况</span>
+                    <ul>
+                        <li>学校简介</li>
+                        <li>校友天地</li>
+                        <li>发展历程</li>
+                        <li>校园风光</li>
+                        <li>校徽校训</li>
+                    </ul>
+                </li>
+                <li class="header-main-lone">
+                    <span>机构设置</span>
+                    <ul>
+                        <li>学校简介</li>
+                        <li>校友天地</li>
+                        <li>发展历程</li>
+                        <li>校园风光</li>
+                        <li>校徽校训</li>
+                    </ul>
+                </li>
+                <li class="header-main-lone">
+                    <span>招生就业</span>
+                    <ul>
+                        <li>学校简介</li>
+                        <li>校友天地</li>
+                        <li>发展历程</li>
+                        <li>校园风光</li>
+                        <li>校徽校训</li>
+                    </ul>
+                </li>
+                <li class="header-main-lone">
+                    <span>四位一体</span>
+                    <ul>
+                        <li>学校简介</li>
+                        <li>校友天地</li>
+                        <li>发展历程</li>
+                        <li>校园风光</li>
+                        <li>校徽校训</li>
+                    </ul>
+                </li>
+                <li class="header-main-lone">
+                    <span>德国留学</span>
+                    <ul>
+                        <li>学校简介</li>
+                        <li>校友天地</li>
+                        <li>发展历程</li>
+                        <li>校园风光</li>
+                        <li>校徽校训</li>
+                    </ul>
+                </li>
+                <li class="header-main-lone">
+                    <span>文化移通</span>
+                    <ul>
+                        <li>学校简介</li>
+                        <li>校友天地</li>
+                        <li>发展历程</li>
+                        <li>校园风光</li>
+                        <li>校徽校训</li>
+                    </ul>
+                </li>
+                <li class="header-main-lone">
+                    <span>招贤纳士</span>
+                    <ul>
+                        <li>学校简介</li>
+                        <li>校友天地</li>
+                        <li>发展历程</li>
+                        <li>校园风光</li>
+                        <li>校徽校训</li>
+                    </ul>
+                </li>
+                <li class="header-main-lone">
+                    <span>广告服务</span>
+                    <ul>
+                        <li>学校简介</li>
+                        <li>校友天地</li>
+                        <li>发展历程</li>
+                        <li>校园风光</li>
+                        <li>校徽校训</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="header-footer">
+            <!-- 轮播 -->
+            <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+                <!-- 指示符 -->
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+                </div>
+
+                <!-- 轮播图片 -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="images/lb1.png" class="d-block" style="width:100% ;height:100%">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/lb2.jpg" class="d-block" style="width:100%">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/lb3.jpg" class="d-block" style="width:100%">
+                    </div>
+                </div>
+
+                <!-- 左右切换按钮 -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+     <span class="carousel-control-prev-icon"></span>
+   </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+     <span class="carousel-control-next-icon"></span>
+   </button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <top>当前位置：
+            <a href="index.html">首页</a> / 通知公告 / List
+        </top>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel  list2">
+                        <div class="panel-body">
+                            <ul class="list-unstyled">
+
+                                <li class="row list4">
+                                    <a class="col-md-3" href="/user/detail">
+                                        <img class="media-object" src="images/list1.png" width="100%" height="160px" />
+                                    </a>
+                                    <div class="col-md-9  list3">
+                                        <h4>
+                                            【就业创业】重庆移通学院访企拓岗走进企业——强化学生就业意识，校企合作共促发展
+                                        </h4>
+                                        <div class="content">
+                                            2022年，我国毕业生人数首次突破千万大关，就业形势愈发严峻。为增强我校学生就业竞争力，积极落实党中央《中长期青年发展规划（2016-2025年）》文件精神，根据《重庆移通学院关于开展书记校长访企拓岗促就业专项行动方案的通知》（移通〔2022〕75号）要求。5月26日，重庆移通学院副校长王永刚、数字经济与信息管理学院院长潘显兵、副院长任瑞娟及师生代表共7人前往重庆南方新华企业管理咨询有限公司、重庆索能建设有限公司两家校企合作企业进行走访，共同商讨人才培育新方向，了解企业人才需求，推动校企多维育人。
+                                        </div>
+                                        <span class="time">2022-05-31</span>
+                                    </div>
+                                </li>
+                                <li class="row list4">
+                                    <a class="col-md-3" href="/user/detail">
+                                        <img class="media-object" src="images/list2.jpg" width="100%" height="160px" />
+                                    </a>
+                                    <div class="col-md-9  list3">
+                                        <h4>
+                                            【就业创业】德国工程学院2022届毕业生金雯求职语录——敢做敢想，保持优秀成长
+                                        </h4>
+                                        <div class="content">
+                                            我是金雯，女，汉族，中共预备党员，贵州安顺人，是重庆移通学院2022届德国工程学院工商企业管理专业的学生，在校期间曾担任2019级工商企业管理专业年级长，2019级工商企业管理星耀三班班长，大学生艺术团艺术综合部部长，学院2020级学生班导师等职务。学习刻苦，工作认真，不管是班内还是学生会的工作都不会有丝毫懈怠，在校三年期间先后获评“学校优秀学生奖学金一等奖”、“优秀共青团员”、“优秀共青团干部”、“优秀干部”、“勤工助学先进个人”、“优秀毕业生”等多项称号，毕业后现就职于睿裕投资有限公司，任总经理助理一职。
+                                        </div>
+                                        <span class="time">2022-05-31</span>
+                                    </div>
+                                </li>
+                                <li class="row list4">
+                                    <a class="col-md-3" href="/user/detail">
+                                        <img class="media-object" src="images/list3.png" width="100%" height="160px" />
+                                    </a>
+                                    <div class="col-md-9  list3">
+                                        <h4>
+                                            【移通故事·校友汇】舒瑞欣，愈逐极致的优秀志愿者！
+                                        </h4>
+                                        <div class="content">
+                                            舒瑞欣，我校2014级大数据与软件学院校友，2021年的“校友年度人物”获奖者，现就职于四川省内江市威远县经济和信息化局。 2014年9月，她带着懵懂和彷徨踏进了移通的大门，面对陌生的场景，对一切都充满了憧憬。 “大学一定要加学生会”，因为学长学姐的这句劝告，她一股脑加入了三个部门，同时还兼顾班级事务，日常忙得像个陀螺一样。但这样忙碌的生活更让她感受到大学生活的丰富多彩和充实，即使每天在寝室、教室、活动现场的闭环中生活也不觉得枯燥。 经过一年多的“升级打怪”，她也顺利升级成为一名部长，带领十几个小伙伴，一起努力，一起成长。
+                                        </div>
+                                        <span class="time">2022-05-31</span>
+                                    </div>
+                                </li>
+                                <li class="row list4">
+                                    <a class="col-md-3" href="/user/detail">
+                                        <img class="media-object" src="images/list4.jpg" width="100%" height="160px" />
+                                    </a>
+                                    <div class="col-md-9  list3">
+                                        <h4>
+                                            【移通故事·人物】中正辩道上的僧侣与传教者
+                                        </h4>
+                                        <div class="content">
+                                            编者按：每个人都是一座山，都会有山的巍峨与高度；每个人都是一片海，都会有海的胸襟与深度。对话人物，书写故事，树立榜样，让我们走进他们，从他们的故事中感悟时代的变迁和人格的魅力，在对话中体会人性向善的力量和丰富的思想内涵。 成长的路上满是悄然长大的声音，站在青春的日子里遍地美好。重庆移通学院校辩论队执行队长、2019级创意写作家班副班长、二届一任淬炼·国际商学院辩论队队长李世博，有勇气、敢尝试、不甘于平凡、万事都想要去试一试是大家对他的评价。曾先后获得迎春花杯重庆赛区8强，代涛杯四强、国际网络中文辩论赛十强、启真杯冠军、多次最佳辩手等多项荣誉。
+                                        </div>
+                                        <span class="time">2022-05-31</span>
+                                    </div>
+                                </li>
+                                <li class="row list4">
+                                    <a class="col-md-3" href="/user/detail">
+                                        <img class="media-object" src="images/list5.png" width="100%" height="160px" />
+                                    </a>
+                                    <div class="col-md-9  list3">
+                                        <h4>
+                                            【移通故事·深度校园】朝着人生的跑道，勇往直前
+                                        </h4>
+                                        <div class="content">
+                                            四月，重庆移通学院运动场上意气风发的少男少女们将汗水挥洒在跑道上。 阳光倾斜而下，跑道旁，一声枪响划破长空，一道道矫健的身影冲出，引起场外阵阵惊叹。 有人曾说，“即使奔跑着逃开不幸，也要奔跑着追寻幸福。” 每一个人都在为充实的生活，为之不断地奔跑，每一次的追逐、尝试都值得鼓励与喝彩。 在这绝大多数人都毫无交集的世界里，每个人都奔跑在自己的人生跑道上，有的人相伴而行，有的人孤军奋战。
+                                        </div>
+                                        <span class="time">2022-05-31</span>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul class="pagination pagination-lg pull-right">
+                                <li class="disabled"><a href="#">&laquo;上一页</a></li>
+                                <li class="active"><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li><a href="#">下一页&raquo;</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-top">
+            <ul>
+                <li>綦江校区 |</li>
+                <li>智慧门户 |</li>
+                <li>办公系统 |</li>
+                <li>教务内网 |</li>
+                <li>学工系统 |</li>
+                <li>乘车路线 |</li>
+                <li>院长信箱 |</li>
+                <li>联系我们 |</li>
+                <li>旧版官网 </li>
+            </ul>
+        </div>
+        <div class="footer-main">
+            <section class="foot-main-img1"><img src="images/public2.png" width="180px" height="40px"></section>
+            <p>重庆移通学院 版权所有 | 地址：重庆市合川大学城假日大道1号 | 邮编：401520 | 渝ICP备12002696号-1</p>
+            <section class="foot-main-img2"><img src="images/pubic3.gif" width="50px" height="75px"></section>
+            <section class="foot-main-img3"><img src="images/public4.gif" width="70px" height="75px"></section>
+        </div>
+    </footer>
+</body>
+
+</html>

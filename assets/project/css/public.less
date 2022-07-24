@@ -1,0 +1,149 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+header{
+    .header-top {
+        width: 100%;
+        height: 100px;
+        background: #456D80 url(../images/public1.png) no-repeat 320px center;
+        .header-top-right{
+            font-size: 17px;
+            font-family: SimSun;
+            padding-top:12px;
+            margin-left:730px;
+            height:100px;
+            color:white;
+            padding-left: 30px;
+            border-left:1px solid white;
+            .xq{
+                position:absolute;
+                font-size: 20px;
+                color:#4682B4;
+                background-color:white;
+                width:90px;
+                height:30px;
+                line-height:30px;
+                border-radius:5px;
+                padding:3px;
+                margin-top:-60px;
+                margin-left:460px ;
+                &:hover {
+                    background-color:#4682B4;
+                    color: white;
+                }
+            }
+        
+        }
+    }
+    .header-main {
+        height: 45px;
+        width: 100%;
+        color: white;
+        font-weight: bold;
+        background-color:#013F58;
+        .header-main-uone{
+            display: flex;
+            margin-left: 240px;
+            position: relative;
+            .header-main-lone{
+                line-height:45px;
+                span{
+                    width:80px;
+                    padding:0 30px;
+                }
+                &:hover{
+                    background-color:#022b3b;
+                }       
+                &:hover ul{
+                    display:block;
+                }
+                ul{
+                    position:absolute;
+                    z-index: 999;
+                    color: white;
+                    background-color:#013F58;
+                    width:108px;
+                    text-align: center;
+                    // margin-left: -10px;
+                    li{
+                        margin-left: -20px;
+                        width:108px;
+                        height:45px;
+                        line-height:45px;
+                        &:hover {
+                            background-color:#022b3b;
+                        }
+                    }
+                    display:none;
+                }
+            }
+        }
+    }
+}
+footer {
+    .footer-top{
+        height:50px;
+        background-color: #556471;
+        width:100%;
+        line-height: 50px;
+        ul{
+            margin-left: 27.5%;
+            display:flex;
+            li{
+                margin-left:10px;
+                color:white;
+                font-family: SimSun;
+            }
+        }
+    }
+    .footer-main{
+        position: relative;
+        height:135px;
+        width:100%;
+        color:#fefcfc;
+        font-size:13px;
+        line-height:135px;
+        background: #0E2234;
+        display: flex;
+        p{
+            margin-left:30px;
+            &::before{
+                content:'';
+                width:1px;
+                height:50px;
+                background-color:rgb(248, 246, 246);
+                position:absolute;
+                top:45px;
+                left:442px;
+                z-index: 999;
+            }
+            &::after{
+                content:'';
+                width:1px;
+                height:25px;
+                background-color:rgb(255, 254, 254);
+                position:absolute;
+                top:55px;
+                left:1075px;
+                z-index: 999;
+            }
+        }
+        .foot-main-img1{
+            img{
+                margin-left:250px;
+            }
+        }
+        .foot-main-img2{
+            img{
+                margin-left:30px;
+            }
+        }
+        .foot-main-img3{
+            img{
+                margin-left:10px;
+            }
+        }
+    }
+}

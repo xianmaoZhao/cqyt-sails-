@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/project/js/agent.js"></script>
+    <!-- 新 Bootstrap5 核心 CSS 文件 -->
+    <link rel="stylesheet" href="/project/css/bootstrap.min.css">
+
+    <!-- 最新的 Bootstrap5 核心 JavaScript 文件 -->
+    <script src="/project/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/project/css/bootstrap2.css" />
+    <script src="/project/js/jquery-2.1.3.js"></script>
+    <script src="/project/js/bootstrap2.js"></script>
+
+    <style>
+        .zxm {
+            position: flex;
+            margin-bottom: 0 !important;
+        }
+        
+        .pagination {
+            position: relative;
+            margin-left: 42.5% !important;
+        }
+    </style>
+</head>
+
+<body class="bg-dark">
+    <nav class="container-fluid bg-dark">
+        <nav class="container navbar navbar-expand-sm bg-dark navbar-dark">
+            <!-- Brand -->
+            <a class="navbar-brand" href="#">后台管理系统</a>
+
+            <!-- Links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Email</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Phone</a>
+                </li>
+
+                <!-- Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-bs-toggle="dropdown">
+              语言
+            </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Chinese</a>
+                        <a class="dropdown-item" href="#">English</a>
+                        <a class="dropdown-item" href="#">Jannese</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="yhm">
+                <span class="yhm_name" style="color:white;margin-left: 700px;margin-right: 20px;">欢迎您:admin</span>
+               <a href="##" class="yhm_btn" style="color:white">注销</a>
+            </div>
+        </nav>
+    </nav>
+
+    <div id="accordion">
+        <div class="card">
+            <div class="card-header">
+                <a class="btn" data-bs-toggle="collapse" href="#collapseOne">
+                添加通知
+                </a>
+            </div>
+            <div id="collapseOne" class="collapse show" data-bs-parent="#accordion">
+                <br class="card-body">
+
+                <form class="form-horizontal oneform" role="form" style="width:600px">
+                    <div class="form-group has-feedback">
+                        <label class="col-sm-2 control-label">标题：</label>
+                        <div class="col-sm-10">
+                            <input name="title" class="form-control" placeholder="请输入标题">
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback">
+                        <label class="col-sm-2 control-label">来源：</label>
+                        <div class="col-sm-10">
+                            <select name="source" class="form-control">
+                                    <option value="公关部">公关部</option>
+                                    <option value="人事部">人事部</option>
+                                    <option value="安全部">安全部</option>
+                                    <option value="策划部">策划部</option>
+                                </select>
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback">
+                        <label class="col-sm-2 control-label">内容：</label>
+                        <div class="col-sm-10">
+                            <textarea name="content" placeholder="请输入内容" rows="10" cols="60">
+                                </textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <button type="submit" class="btn btn-primary" id="formsub">提交</button>
+                        </div>
+                    </div>
+                </form>
+                <br>
+                <table class="table table-bordered tableone" style="width:800px">
+                    <thead>
+                        <tr>
+                            <th>标题</th>
+                            <th>来源</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseTwo">
+                    添加文章
+                </a>
+            </div>
+            <div id="collapseTwo" class="collapse" data-bs-parent="#accordion">
+                <div class="card-body">
+                    <form class="form-horizontal twoform img" role="form" style="width:600px">
+                        <div class="form-group has-feedback">
+                            <label class="col-sm-2 control-label">图片：</label>
+                            <div class="col-sm-10">
+                                <input type="file" name="image" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <button type="submit" class="btn btn-primary" id="formsub">提交</button>
+                            </div>
+                        </div>
+                    </form>
+                    <br>
+                    <form class="form-horizontal oneform html" role="form" style="width:600px">
+                        <div class="form-group has-feedback">
+                            <label class="col-sm-2 control-label">标题：</label>
+                            <div class="col-sm-10">
+                                <input name="title" class="form-control" placeholder="请输入标题">
+                            </div>
+                        </div>
+                        <div class="form-group has-feedback">
+                            <label class="col-sm-2 control-label">来源：</label>
+                            <div class="col-sm-10">
+                                <select name="source" class="form-control">
+                                        <option value="公关部">公关部</option>
+                                        <option value="人事部">人事部</option>
+                                        <option value="安全部">安全部</option>
+                                        <option value="策划部">策划部</option>
+                                    </select>
+                            </div>
+                        </div>
+                        <div class="form-group has-feedback">
+                            <label class="col-sm-2 control-label">内容：</label>
+                            <div class="col-sm-10">
+                                <textarea name="content" placeholder="请输入内容" rows="10" cols="60">
+                                    <p></p>
+                                    </textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group has-feedback">
+                            <label class="col-sm-2 control-label">缩略图：</label>
+                            <div class="col-sm-10">
+                                <input type="file" name="small" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <button type="submit" class="btn btn-primary" id="formsub">提交</button>
+                            </div>
+                        </div>
+                    </form>
+                    <br>
+                    <table class="table table-bordered tableone" style="width:800px">
+                        <thead>
+                            <tr>
+                                <th>标题</th>
+                                <th>来源</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseThree">
+                    添加轮播图图片
+                    </a>
+            </div>
+            <div id="collapseThree" class="collapse" data-bs-parent="#accordion">
+                <div class="card-body">
+                    <form class="form-horizontal threeform lbt" role="form" style="width:600px">
+                        <div class="form-group has-feedback">
+                            <label class="col-sm-2 control-label">图片：</label>
+                            <div class="col-sm-10">
+                                <input type="file" name="lbt" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <button type="submit" class="btn btn-primary" id="formsub">提交</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseFour">
+                    删除轮播图
+                    </a>
+            </div>
+            <div id="collapseFour" class="collapse" data-bs-parent="#accordion">
+                <div class="card-body">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Img</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody id="delCar"></tbody>
+                        <ul class="pagination" id="fourUl"></ul>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseFive">
+                   修改List
+                    </a>
+            </div>
+            <div id="collapseFive" class="collapse" data-bs-parent="#accordion">
+                <div class="card-body">
+
+                    <div style="margin-bottom:20px;" class="search-form">
+                        <input class="search"><button class="searchBtn">搜索</button>
+                    </div>
+
+
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>标题</th>
+                                <th>来源</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody id="delCarFive"></tbody>
+                    </table>
+
+                    <form class="form-horizontal Fiveform" role="form" style="width:600px">
+                        <input type="text" hidden class="fiveId" name="id">
+                        <div class="form-group has-feedback">
+                            <label class="col-sm-2 control-label">标题：</label>
+                            <div class="col-sm-10">
+                                <input name="title" class="form-control fiveTitle">
+                            </div>
+                        </div>
+                        <div class="form-group has-feedback">
+                            <label class="col-sm-2 control-label">来源：</label>
+                            <div class="col-sm-10">
+                                <select name="source" class="form-control fiveSource">
+                                        <option value="公关部">公关部</option>
+                                        <option value="人事部">人事部</option>
+                                        <option value="安全部">安全部</option>
+                                        <option value="策划部">策划部</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group has-feedback">
+                            <label class="col-sm-2 control-label ">内容：</label>
+                            <div class="col-sm-10">
+                                <textarea name="content" class="fiveContent" rows="10" cols="60">
+                                    </textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <button type="submit" class="btn btn-primary fiveEdiBtn" id="formsub">确定修改</button>
+                            </div>
+                        </div>
+                    </form>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseSix">
+                    修改用户资料
+                    </a>
+            </div>
+            <div id="collapseSix" class="collapse" data-bs-parent="#accordion">
+                <div class="card-body">
+                    <div style="margin-bottom:20px;" class="search-form">
+                        <input class="search" placeholder="请输入用户账号名"><button class="searchBtn">搜索</button>
+                    </div>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>姓名</th>
+                                <th>账号</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody id="delCarSix"></tbody>
+                    </table>
+                    <form class="form-horizontal Sixform" role="form" style="width:600px">
+                        <input type="text" hidden class="sixId" name="id">
+                        修改姓名：<input type="text" placeholder=" "  name="name" class="xgname" required pattern="\S{2,4}" style="margin-bottom: 20px;"> 
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <button type="submit" class="btn btn-primary sixEdiBtn">确定修改</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="/project/js/jquery.min.js"></script>
+<script>
+    //----------修改用户资料--------------
+    let collapseSix= document.querySelector('#collapseSix');
+    let searchSix=collapseSix.querySelector('.search');
+    let searchBtnSix=collapseSix.querySelector('.searchBtn');
+    let delCarSix=document.querySelector('#delCarSix');
+    let xgname=document.querySelector('.xgname');
+    let sixId=document.querySelector('.sixId');
+    let Sixform=document.querySelector('.Sixform');
+    searchBtnSix.onclick=function() {
+        let  searchUser = searchSix.value;
+        $.getJSON('/admin/searchUser?searchUser=' + searchUser, function(rs) {
+            let str = "";
+            console.log(rs);
+            rs.forEach((el) => {
+                str += `
+            <tr>
+                <td>${el.id}</td><td>${el.name}</td><td>${el.loginname}</td>
+                <td><button class='editorFive' data-id='${el.id}'>编辑</button></td>
+            </tr>
+          `;
+            });
+            delCarSix.innerHTML = str;
+        });
+    }
+    agent1("delCarSix", "click", "button", function() {
+        let id = this.getAttribute("data-id");
+        $.getJSON("/admin/findUserEditor?id=" + id, function(rs) {
+            sixId.value = rs[0].id;
+            xgname.value = rs[0].name;
+        });
+
+    });
+    Sixform.onsubmit = function() {
+        let info = $(this).serialize();
+        if (confirm("是否修改？")) {
+            $.getJSON('/admin/ediUSer', info, function(result) {
+                if (result) {
+                    alert("修改成功！");
+                } else {
+                    alert("修改失败！")
+                }
+            })
+        }
+        return false;
+    }
+    //----------------注销--------------
+    let yhmBtn=document.querySelector('.yhm_btn');
+    yhmBtn.onclick=function(){
+    $.getJSON('/admin/deleteName',function(data){
+         if(data){
+             location.href = '/user/login';
+         }
+    })
+ };
+    //----------添加通知--------------
+    let oFormOne = document.querySelector('.oneform');
+    let oTbody = document.querySelector('.tableone').querySelector('tbody');
+    oFormOne.onsubmit = function() {
+        // 将表单内容包装
+        let info = $(this).serialize();
+        $.getJSON('/admin/addNotice', info, function(result) {
+            console.log(result);
+            let tr = ` <tr>
+                        <td>${result.title}</td>
+                        <td>${result.source}</td>
+                    </tr>`;
+            oTbody.innerHTML = tr + oTbody.innerHTML;
+        })
+        return false;
+    }
+
+    //----------添加文章--------------
+    let oDivTwo = document.querySelector('#collapseTwo')
+    let oFormTwoHtml = oDivTwo.querySelector('.html');
+    let oTextarea = oFormTwoHtml.querySelector('textarea');
+    let oFormTwoImg = oDivTwo.querySelector('.img');
+    let oTbodyTwo = oDivTwo.querySelector('tbody');
+    oFormTwoImg.onsubmit = function() {
+        let data = new FormData(this);
+        $.ajax({
+            url: '/admin/addImage',
+            type: 'post',
+            data,
+            dataType: "json",
+            cache: false, //不使用缓存
+            contentType: false,
+            processData: false,
+            success: function(result) {
+                oTextarea.value += `<img src='/newImage/${result}'/><p></P>`
+            },
+            error: function() {
+                alert('error')
+            },
+        })
+        return false;
+    }
+    oFormTwoHtml.onsubmit = function() {
+        // // 将表单内容包装
+        // let info = $(this).serialize();
+        // $.getJSON('/admin/addNew', info, function(result) {
+        //     let tr = ` <tr>
+        //                 <td>${result.title}</td>
+        //                 <td>${result.source}</td>
+        //             </tr>`;
+        //     oTbodyTwo.innerHTML = tr + oTbodyTwo.innerHTML;
+        // });
+        let data = new FormData(this);
+        $.ajax({
+            url: '/admin/addNew',
+            type: 'post',
+            data,
+            dataType: "json",
+            cache: false, //不使用缓存
+            contentType: false,
+            processData: false,
+            success: function(result) {
+                let tr = ` <tr>
+                        <td>${result.title}</td>
+                        <td>${result.source}</td>
+                    </tr>`;
+                oTbodyTwo.innerHTML = tr + oTbodyTwo.innerHTML;
+            },
+            error: function() {
+                alert('error')
+            },
+        })
+        return false;
+    }
+
+    //---------------轮播图----------------------
+    let oFormLbt = document.querySelector('.lbt');
+    oFormLbt.onsubmit = function() {
+        let data = new FormData(this);
+        $.ajax({
+            url: '/admin/addImageLbt',
+            type: 'post',
+            data,
+            dataType: "json",
+            cache: false, //不使用缓存
+            contentType: false,
+            processData: false,
+            success: function(result) {
+                alert("添加图片成功！")
+            },
+            error: function() {
+                alert('error')
+            },
+        })
+        return false;
+    }
+
+    // ----------------删除轮播图-----------------------
+    const oDivFour = document.getElementById("collapseFour");
+    const oTbodyFour = document.getElementById("delCar");
+    const oFourUl = document.getElementById("fourUl");
+    let pageNum = 0;
+    let curPage = 0;
+    delCar();
+
+    function createTrs() {
+        $.getJSON("/admin/getCars?curPage=" + curPage, function(arr) {
+            // console.log(arr);
+            let str = "";
+            arr.forEach((el) => {
+                str += `
+            <tr><td>${el.id}</td><td>${el.img}</td>
+              <td><button data-id='${el.id}'>删除</button></td></tr>
+          `;
+            });
+            oTbodyFour.innerHTML = str;
+        });
+    }
+
+    function delCar() {
+        createTrs();
+        subPage();
+    }
+
+    function subPage() {
+        $.getJSON("/admin/getCarNum", function(num) {
+            pageNum = Math.ceil(num / 4);
+            //如果当前页大于总页数
+            if (curPage > pageNum - 1) {
+                curPage--;
+                createTrs();
+            }
+            let str = `<li data-id='prev'><a href="##">&laquo;上一页</a></li>`;
+            for (let i = 0; i < pageNum; i++) {
+                if (i === curPage) {
+                    str += `<li class='active' data-id='${i}'><a href="##">${i+1}</a></li>`;
+                } else {
+                    str += `<li data-id='${i}'><a href="##">${i+1}</a></li>`;
+                }
+            }
+            str += `<li data-id='next'><a href="##">下一页&raquo;</a></li>`;
+            oFourUl.innerHTML = str;
+        });
+    }
+
+    agent1('fourUl', 'click', 'li', function() {
+        const btnIndex = this.getAttribute('data-id');
+        if (curPage == btnIndex) return;
+        if (curPage === 0 && btnIndex === 'prev') return;
+        if (curPage === pageNum - 1 && btnIndex === 'next') return;
+        if (btnIndex === 'prev') {
+            curPage = curPage > 0 ? --curPage : 0;
+        } else if (btnIndex === 'next') {
+            curPage = curPage < pageNum - 1 ? ++curPage : curPage;
+        } else {
+            curPage = btnIndex - 0
+        }
+        delCar()
+    })
+
+    agent1("delCar", "click", "button", function() {
+        let id = this.getAttribute("data-id");
+        if (confirm("你真的删除吗")) {
+            $.getJSON("/admin/delCar?id=" + id, function(rs) {
+                if (rs) {
+                    delCar();
+                }
+            });
+        }
+    });
+
+    //---------------------------修改list-----------------------------
+    let oDivFive = document.getElementById("collapseFive");
+    let search = oDivFive.querySelector('.search');
+    let searchBtn = oDivFive.querySelector('.searchBtn');
+    let delCarFive = document.querySelector('#delCarFive');
+    let Fiveform = document.querySelector('.Fiveform');
+    let fiveId = document.querySelector('.fiveId');
+    let fiveTitle = document.querySelector('.fiveTitle');
+    let fiveContent = document.querySelector('.fiveContent');
+    let fiveSource = document.querySelector('.fiveSource');
+    searchBtn.onclick = function() {
+        let searchValue = search.value;
+        $.getJSON('/admin/searchList?searchValue=' + searchValue, function(rs) {
+            let str = "";
+            // console.log(rs);
+            rs.forEach((el) => {
+                str += `
+            <tr><td>${el.id}</td><td>${el.title}</td><td>${el.source}</td>
+              <td><button class='editorFive' data-id='${el.id}'>编辑</button></td></tr>
+          `;
+            });
+            delCarFive.innerHTML = str;
+        });
+    }
+    agent1("delCarFive", "click", "button", function() {
+        let id = this.getAttribute("data-id");
+
+        $.getJSON("/admin/findListEditor?id=" + id, function(rs) {
+            fiveId.value = rs[0].id;
+            fiveTitle.value = rs[0].title;
+            fiveContent.value = rs[0].content;
+            fiveSource.value = rs[0].source;
+        });
+
+    });
+    Fiveform.onsubmit = function() {
+        let info = $(this).serialize();
+        if (confirm("是否修改？")) {
+            $.getJSON('/admin/ediNotice', info, function(result) {
+                if (result) {
+                    alert("修改成功！");
+                } else {
+                    alert("修改失败！")
+                }
+            })
+        }
+        return false;
+    }
+</script>
+
+</html>

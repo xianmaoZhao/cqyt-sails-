@@ -1,0 +1,57 @@
+main {
+  width: 1250px;
+  margin: 20px auto;
+}
+main top {
+  display: block;
+  font-size: 12px;
+  line-height: 40px;
+  width: inherit;
+  height: 40px;
+  background-color: #E1E5E6;
+  text-align: center;
+}
+main top a,
+main top a:visited {
+  color: black;
+  text-decoration: none;
+}
+main .container .list4 {
+  margin-top: 20px;
+  border-bottom: 1px dashed #c1c2c2;
+  padding-bottom: 15px;
+}
+main .container .list4:last-child {
+  border-bottom: none;
+}
+main .container .list4 .media-object img {
+  height: 40px;
+}
+main .container .list4 h4 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  width: 898px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+main .container .list4 .content {
+  width: 898px;
+  height: 108px;
+  font-family: SimSun;
+  font-size: 18px;
+  text-indent: 2em;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+}
+main .container .list4 .time {
+  margin-top: 5px;
+  float: right;
+  font-size: 18px;
+  font-family: SimSun;
+}

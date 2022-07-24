@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <title>登录注册忘记密码页面</title>
+    <link rel="stylesheet" href="/project/css/normalize.min.css">
+    <link rel="stylesheet" href="/project/css/style.css">
+    <style>
+        #sublogin {
+            background: #00897B;
+            border: none;
+            width: 100%;
+            padding: 10px 0;
+            font-weight: 600;
+            color: #fff;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+            width: 300px;
+            text-align: center;
+        }
+        
+        body {
+            background: url("/project/images/login.png") center/cover fixed;
+        }
+        
+        .formRight form header {
+            margin-bottom: 15px !important;
+        }
+        
+        #yzmText {
+            position: absolute;
+            top: -15px;
+            right: 0;
+        }
+        
+        .formRight form section label input {
+            padding: 0 0 3px !important;
+        }
+        
+        button,
+        input,
+        optgroup,
+        select,
+        textarea {
+            font-size: 14px !important;
+        }
+        
+        .formRight form {
+            overflow: visible !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="formContainer" class="dwo">
+        <div class="formLeft">
+            <img src="/project/images/tx.png">
+        </div>
+        <div class="formRight">
+            <!-- Forgot password form -->
+            <form id="forgot" class="otherForm">
+                <header>
+                    <h2>修改密码</h2>
+                </header>
+                <section>
+                    <label>
+                        <p>账号</p>
+                        <input type="text" placeholder=" "  name="yloginname">
+                        <div class="border"></div>
+                    </label>
+                    <label>
+                        <p>旧密码</p>
+                        <input type="password" placeholder=" " name="yloginpass">
+                        <div class="border"></div>
+                    </label>
+                    <label>
+                        <p>新密码</p>
+                        <input type="password" placeholder=" " name="xloginpass">
+                        <div class="border"></div>
+                    </label>
+                    <button type="submit" class="btn btn-primary" id="xg">确认修改</button>
+                </section>
+                <footer>
+                    <button type="button" class="forgotBtn">返回</button>
+                </footer>
+            </form>
+
+            <!-- Login form -->
+            <form id="login" class="loginForm">
+                <header>
+                    <h2>欢迎回来</h2>
+
+                </header>
+                <section>
+                    <label>
+                        <p>账号</p>
+                        <input type="text" placeholder=" " id="loginname" name="loginname">
+                        <div class="border"></div>
+                    </label>
+                    <label>
+                        <p>密码</p>
+                        <input type="password" placeholder=" "id='loginpass' name="loginpass">
+                        <div class="border"></div>
+                    </label>
+                    <label>
+                        <p>验证码</p>
+                        <input class="form-control" placeholder="" name="yzm">
+                        <span id="yzmText"><%- imgData %></span>
+                    </label>
+                    <button type="submit" class="btn btn-primary" id="sublogin">登 录</button>
+
+                </section>
+                <footer>
+                    <button type="button" class="forgotBtn">修改密码？</button>
+                    <button type="button" class="registerBtn">新用户？</button>
+                </footer>
+            </form>
+
+            <!-- Register form -->
+            <form id="register" class="otherForm">
+                <header>
+                    <h2>用户注册</h2>
+
+                </header>
+                <section>
+                    <label>
+                        <p>姓名</p>
+                        <!-- 不为空,非空白 -->
+                        <input type="text" placeholder=" "  name="name" class="zcname" required pattern="\S{2,4}"> 
+                        <div class="border"></div>
+                    </label>
+                    <label>
+                        <p>账号</p>
+                        <!--不为空， 英文，数字，下划线 -->
+                        <input type="text" placeholder=" "  name="loginname" class="zcloginname" required pattern="\w{2,8}">
+                        <div class="border"></div>
+                    </label>
+                    <label>
+                        <p>密码</p>
+                        <input type="password" placeholder=" " class="p1" name="loginpass" required pattern="\w{2,10}">
+                        <div class="border"></div>
+                    </label>
+                    <label>
+                        <p>确认密码</p>
+                        <input type="password" placeholder=" " class="p2" required pattern="\w{2,10}">
+                        <div class="border"></div>
+                    </label>
+
+                    <button type="submit">注 册</button>
+                </section>
+                <footer>
+                    <button type="button" class="registerBtn">返回</button>
+                </footer>
+            </form>
+        </div>
+    </div>
+    <script src="/project/js/jquery.min.js"></script>
+    <script src="/project/js/script.js"></script>
+    <script>
+        let zcloginname = document.querySelector('.zcloginname');
+        let zcname = document.querySelector('.zcname')
+        let login = document.querySelector(".loginForm");
+        let loginDl = document.querySelector('#sublogin');
+        let loginname = document.querySelector('#loginname');
+        let loginpass = document.querySelector('#loginpass');
+        let register = document.querySelector('#register');
+        let oP1 = document.querySelector('.p1');
+        let oP2 = document.querySelector('.p2');
+        let oYzm = document.getElementById('yzmText');
+        oYzm.onclick = function() {
+            $.getJSON('/user/getYzm', function(svg) {
+                oYzm.innerHTML = svg
+            })
+        }
+        register.onsubmit = function() {
+            if (oP1.value !== oP2.value) {
+                alert('两次密码不一致');
+                return false
+            }
+            let x = 0;
+            $.ajaxSettings.async = false;
+            $.getJSON('/user/getUserZhLogin', function(result) {
+                for (i in result) {
+                    console.log(result[i].loginname);
+                    console.log(zcloginname.value);
+                    if (result[i].loginname == zcloginname.value) {
+                        alert('账号已存在，请重新更换账号');
+                        x = 0;
+                        break;
+                    } else {
+                        x = 1
+                    }
+                };
+            });
+            $.ajaxSettings.async = true;
+            if (x == 1) {
+                // 将表单内容包装
+                let info = $(this).serialize();
+                $.getJSON('/user/addUserLogin', info, function(result) {
+                    if (result) {
+                        alert('注册成功,请登录');
+                        location.href = '/user/login';
+                    } else alert('注册失败！');
+                });
+            }
+            return false;
+        }
+
+        
+        login.onsubmit=function() {
+            let info = $(this).serialize();
+            $.post('/user/dl',info,function(result){
+                if(result==='1'){
+                    alert('验证码错误！')
+                }else if(result==='2'){
+                    location.href = '/admin/';
+                }else if(result==='3'){
+                    location.href = '/';
+                }else{
+                    alert('用户名或账号错误！')
+                }
+            },'json')
+            return false;
+        }
+       
+        //----------修改密码--------------
+        let forgot=document.querySelector('#forgot')
+        forgot.onsubmit=function() {
+            let info = $(this).serialize();
+            $.post('/user/Newpass',info,function(result){
+                if(result==='1'){
+                    alert('修改成功！')
+                    
+                }else{
+                    alert('原账号或密码错误！')
+                }
+            },'json')
+            return false;
+        }
+    </script>
+</body>
+
+</html>

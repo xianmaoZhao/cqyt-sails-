@@ -1,0 +1,185 @@
+<link rel="stylesheet" href="/project/css/index.css">
+
+<style>
+    .panel-primary>.panel-heading {
+        background-color: #E1E5E6;
+        border-color: #b7b7b8;
+    }
+    
+    .panel-primary {
+        border-color: #b7b7b8;
+    }
+    
+    .panel-primary>.panel-heading {
+        color: black;
+        font-weight: bold;
+    }
+    
+    a,
+    a:visited {
+        text-decoration: none;
+        color: black;
+        font-family: SimSun;
+    }
+    
+    .carousel-indicators {
+        margin-left: 18.5%;
+        margin-bottom: 3%;
+    }
+    
+    .carousel-indicators [data-bs-target] {
+        height: 6px;
+    }
+</style>
+
+
+
+<!-- 轮播 -->
+<div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+    <!-- 指示符 -->
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+    </div>
+
+    <!-- 轮播图片 -->
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="/lbtImage/<%- newTwo.lbt0 %>" class="d-block" style="width:100% ;height:100%">
+        </div>
+        <div class="carousel-item">
+            <img src="/lbtImage/<%- newTwo.lbt1 %>" jpg " class="d-block " style="width:100% ">
+            </div>
+            <div class="carousel-item ">
+                <img src="/lbtImage/<%- newTwo.lbt2 %> " class="d-block " style="width:100% ">
+        </div>
+    </div>
+
+</div>
+
+<main>
+    <div class="row ">
+        <div class="col-md-4 main-left ">
+            <div class="panel panel-primary ">
+                <div class="panel-heading ">
+                    <h3 class="panel-title " style="font-size: 19px ">
+                        移通要闻 / detail
+                        <a href="/user/detail " class="pull-right " style="font-size: 12px; color: rgb(11, 11, 11); margin-top: 10px ">MORE</a
+                  >
+                </h3>
+              </div>
+              <div class="panel-body stm1 detailcontent ">
+                <h4 class="text-center " style="font-family: SimSun; ">
+                    <%- newOne.title %>
+                  </h4>
+                  
+                  <img src='/smallImage/<%- newOne.small %>'
+                    alt=" "
+                  />
+                   
+                
+                  <%- newOne.p0 %>
+                
+                        <a href="/user/detail " class="pull-right ">点击查询详情</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mian-right ">
+
+            <div class="panel panel-primary ">
+                <div class="panel-heading ">
+                    <h3 class="panel-title " style="font-size: 19px ">
+                        移通快讯 / List
+                        <a href="/user/list " class="pull-right " style="font-size: 12px; color: rgb(5, 5, 5); margin-top: 10px ">MORE</a>
+                    </h3>
+                </div>
+                <div class="panel-body stm2 listcontent ">
+                    <!-- <a href="/user/list ">
+                        <content>【移通故事·深度校园】挖掘电影无与伦比的商业魅力——重庆移通学院电影商务产业学院精英班</content><span>2022-1-1</span>
+                    </a>
+                    <a href="/user/list ">
+                        <content>【移通故事·校友汇】齐雯歆，我校走出的逐梦奋斗者！挖掘电影无与伦比的商业魅力——重庆移通学院电影商务产业学院精英班</content><span>2022-1-1</span></a>
+                    <a href="/user/list ">
+                        <content>【移通故事·大咖书评】永不言弃——阅读《褚时健传》有感</content><span>2022-1-1</span>
+                    </a>
+                    <a href="/user/list ">
+                        <content>【移通故事·大咖书评】永不言弃——阅读《褚时健传》有感</content><span>2022-1-1</span>
+                    </a>
+                    <a href="/user/list ">
+                        <content>【移通故事·校友汇】舒瑞欣，愈逐极致的优秀志愿者！</content><span>2022-1-1</span>
+                    </a> -->
+                </div>
+            </div>
+
+
+            <div class="panel panel-primary ">
+                <div class="panel-heading ">
+                    <h3 class="panel-title " style="font-size: 19px ">
+                        通知公告 / 信息公开
+                        <a href="## " class="pull-right " style="font-size: 12px; color: rgb(9, 8, 8); margin-top: 10px ">MORE</a>
+                    </h3>
+                </div>
+                <div class="panel-body stm2 ">
+                    <a href="## ">重庆移通学院2022“酷Camp”青少年博优夏令营招生简章</a
+            >
+            <a href="/user/list"
+              >国际预科项目2022年招生简章（非统招）</a
+            >
+            <a href="/user/list"
+              >重庆移通学院合川校区天空书院商业招商公告</a
+            >
+            <a href="/user/list"
+              >关于2021-2022学年“移通之星”候选人评选结果的公示</a
+            >
+            <a href="/user/list"
+              >关于重庆移通学院2021-2022学年双创先锋优秀奖学金评选结果的公示</a
+            >
+            
+          <a href="/user/list"
+              >教育部公开曝光第八批8起违反教师职业行为十项准则典型案例</a
+            >
+            <a href="/user/list ">
+            舒瑞欣，愈逐极致的优秀志愿者！
+            </a>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="main-bottom ">
+        <ul>
+            <li><img src="/project/images/main2.png "></li>
+            <li><img src="/project/images/main3.png "></li>
+            <li><img src="/project/images/main4.png "></li>
+            <li><img src="/project/images/main5.png "></li>
+        </ul>
+    </div>
+</main>
+
+<script>
+    //----------------list---------------------
+    let listcontent = document.querySelector('.listcontent');
+    let str = '';
+    $.getJSON('user/getlist', function(result) {
+        // console.log(result);
+        result.forEach(function(e) {
+            let time = createDate(e.createdAt)
+            let a = document.createElement('a');
+            a.setAttribute('href', '/user/list');
+            e.content = e.content.replace(/<p>/gim, " ");
+            e.content = e.content.replace(/<\/p>/gim, " ");
+            a.innerHTML = ` <content>${e.title}</content>`;
+            a.innerHTML += `<span>${time}</span>`
+            listcontent.appendChild(a);
+        });
+    });
+   
+
+    function createDate(t) {
+        let d = new Date(t);
+        return d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate()
+    }
+</script>

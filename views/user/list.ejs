@@ -1,0 +1,139 @@
+<link rel="stylesheet" href="/project/css/list.css">
+<style>
+    .pagination>.active>a {
+        background-color: #cfd1d2;
+        border-color: #E1E5E6;
+    }
+    
+    .pagination>.active>a,
+    .pagination>.active>span,
+    .pagination>.active>a:hover,
+    .pagination>.active>span:hover,
+    .pagination>.active>a:focus,
+    .pagination>.active>span:focus {
+        z-index: 2;
+        color: #fff;
+        cursor: default;
+        background-color: #bdbebf;
+        border-color: #E1E5E6;
+    }
+    
+    .pagination>li>a,
+    .pagination>li>span {
+        position: relative;
+        float: left;
+        padding: 6px 12px;
+        margin-left: -1px;
+        line-height: 1.42857143;
+        color: #888989;
+        text-decoration: none;
+        background-color: #fff;
+        border: 1px solid #ddd;
+    }
+    
+    .eltitle {
+        text-decoration: none;
+        color: black;
+    }
+    
+    main .container .list4 h4 {
+        font-size: 18px !important;
+    }
+</style>
+<main>
+    <top>当前位置：
+        <a href="/">首页</a> / 通知公告 / List
+    </top>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel  list2">
+                    <div class="panel-body">
+                        <ul class="list-unstyled">
+                        </ul>
+                        <ul class="pagination pagination-lg pull-right" id="fourUl">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<script src="/project/js/agent.js"></script>
+<script>
+    let listUnstyled = document.querySelector('.list-unstyled');
+    let pagination = document.querySelector('.pagination');
+    let pageNum = 0;
+    let curPage = 0;
+    run();
+
+    function run() {
+        createTrs();
+        subPage();
+    };
+
+
+    function createTrs() {
+        $.getJSON("/user/getNotice?curPage=" + curPage, function(arr) {
+            // console.log(arr);
+            let str = "";
+            arr.forEach((el) => {
+                str += `
+         <li class="row list4">
+                                <a class="col-md-3" href="/user/detail">
+                                    <img class="media-object" src="/project/images/listbg.jpg" width="100%" height="160px" />
+                                </a>
+                                <div class="col-md-9  list3 listcontent">
+                                    <h4 class="title">
+                                        <a class="col-md-3 eltitle" href="/user/detail">
+                                        ${el.title}
+                                    </a>
+                                    </h4>
+                                    <div class="content">
+                                        ${el.content}
+                                    </div>
+                                    <span class="time"> ${createDate(el.createdAt)}</span>
+                                </div>
+                            </li>
+          `;
+            });
+            listUnstyled.innerHTML = str;
+        });
+    };
+
+    function subPage() {
+        $.getJSON("/user/getNoticeNum", function(num) {
+            pageNum = Math.ceil(num / 5);
+            let str = `<li data-id='prev'><a href="##">&laquo;上一页</a></li>`;
+            for (let i = 0; i < pageNum; i++) {
+                if (i === curPage) {
+                    str += `<li class='active' data-id='${i}'><a href="##">${i+1}</a></li>`;
+                } else {
+                    str += `<li data-id='${i}'><a href="##">${i+1}</a></li>`;
+                }
+            }
+            str += `<li data-id='next'><a href="##">下一页&raquo;</a></li>`;
+            pagination.innerHTML = str;
+        });
+    }
+
+    agent1('fourUl', 'click', 'li', function() {
+        let btnIndex = this.getAttribute('data-id');
+        if (curPage == btnIndex) return;
+        if (curPage === 0 && btnIndex === 'prev') return;
+        if (curPage === pageNum - 1 && btnIndex === 'next') return;
+        if (btnIndex === 'prev') {
+            curPage = curPage > 0 ? --curPage : 0;
+        } else if (btnIndex === 'next') {
+            curPage = curPage < pageNum - 1 ? ++curPage : curPage;
+        } else {
+            curPage = btnIndex - 0
+        }
+        run(); //每次点击都会调用方法，重新渲染页面
+    })
+
+    function createDate(t) {
+        let d = new Date(t);
+        return d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate()
+    }
+</script>

@@ -1,0 +1,136 @@
+<link rel="stylesheet" href="/project/css/list.css">
+<style>
+    .pagination>.active>a {
+        background-color: #cfd1d2;
+        border-color: #E1E5E6;
+    }
+    
+    .pagination>.active>a,
+    .pagination>.active>span,
+    .pagination>.active>a:hover,
+    .pagination>.active>span:hover,
+    .pagination>.active>a:focus,
+    .pagination>.active>span:focus {
+        z-index: 2;
+        color: #fff;
+        cursor: default;
+        background-color: #bdbebf;
+        border-color: #E1E5E6;
+    }
+    
+    .pagination>li>a,
+    .pagination>li>span {
+        position: relative;
+        float: left;
+        padding: 6px 12px;
+        margin-left: -1px;
+        line-height: 1.42857143;
+        color: #888989;
+        text-decoration: none;
+        background-color: #fff;
+        border: 1px solid #ddd;
+    }
+    
+    .eltitle {
+        text-decoration: none;
+        color: black;
+    }
+    
+    main .container .list4 h4 {
+        font-size: 16px !important;
+        width: 100%;
+    }
+    
+    main .container .list4 .time {
+        margin-top: 0;
+        display: block;
+        position: absolute;
+        right: 0;
+    }
+</style>
+<main>
+    <top>当前位置：
+        <a href="/">首页</a> / search
+    </top>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel  list2">
+                    <div class="panel-body">
+                        <ul class="list-unstyled">
+                        </ul>
+                        <ul class="pagination pagination-lg pull-right" id="fourUl">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<script src="/project/js/agent.js"></script>
+<script>
+    let listUnstyled = document.querySelector('.list-unstyled');
+    let pagination = document.querySelector('.pagination');
+    let pageNum = 0;
+    let curPage = 0;
+    let arr = [];
+    let records = 0;
+    $.getJSON('/user/getSearch', function(rs) {
+        arr = rs;
+        records = arr.length;
+        pageNum = Math.ceil(records / 6);
+        showData()
+    });
+
+    function showData() {
+        let arr1 = [];
+        let start = curPage * 6;
+        let end = (curPage === pageNum - 1) ? records : start + 6;
+        for (let i = curPage * 6; i < end; i++) {
+            arr1.push(arr[i])
+        }
+        let str = "";
+        arr1.forEach(el => {
+            str += ` 
+                    <li class="row list4">
+                        <div class="col-md-12  list3 listcontent">
+                            <h4 class="title" style="position: relative;">
+                                <a class="col-md-12 eltitle" href="/user/${el.detailName}?id=${el.id}">
+                                        ${el.title}【${el.source}】
+                                </a>
+                                <span class="time">${el.date}</span>
+                            </h4>
+                                
+                        </div>
+                    </li>             
+                  `
+            listUnstyled.innerHTML = str;
+        });
+        subPage()
+    }
+
+    function subPage() {
+        let str = '<li data-id="prev"><a href="##">&laquo;上一页</a></li>';
+        for (let i = 0; i < pageNum; i++) {
+            if (i === curPage) {
+                str += `<li data-id=${i} class="active"><a href="##">${i+1}</a></li>`
+            } else {
+                str += `<li data-id=${i}><a href="##">${i+1}</a></li>`
+            }
+        }
+        str += `<li data-id='next'><a href="##">下一页&raquo;</a></li>`;
+        pagination.innerHTML = str;
+    }
+
+    agent1('fourUl', 'click', 'li', function() {
+        const liName = this.getAttribute('data-id');
+        if (liName === 'prev') {
+            curPage = curPage > 0 ? --curPage : 0;
+        } else if (liName === 'next') {
+            curPage = curPage < pageNum - 1 ? ++curPage : curPage
+        } else {
+            curPage = liName - 0
+        }
+        showData()
+    })
+</script>
